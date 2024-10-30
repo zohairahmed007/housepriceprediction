@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import pickle
 import numpy as np
+import os
 
 # Function to load JSON data from a file
 with open('columns.json', 'r') as f:
@@ -23,8 +24,14 @@ bedrooms_bhk = st.text_input("Enter the number of BHK / Bedrooms", value="3")
 bathrooms = st.text_input("Enter the number of bathrooms", value="2")
 
 
+# Get the current working directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define the path to the model file
+model_path = os.path.join(current_dir, 'home_prices_model.pkl')
+
 # Load the pre-trained model
-with open('home_prices_model.pickle', 'rb') as f:
+with open(model_path, 'rb') as f:
     model = pickle.load(f)
 
 
