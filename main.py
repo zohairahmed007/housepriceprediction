@@ -28,7 +28,7 @@ bathrooms = st.text_input("Enter the number of bathrooms", value="2")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Define the path to the model file
-model_path = os.path.join(current_dir, 'home_prices_model.pickle
+model_path = os.path.join(current_dir, 'home_prices_model.pickle')
 # Load the pre-trained model
 with open(model_path, 'rb') as f:
     model = pickle.load(f)
